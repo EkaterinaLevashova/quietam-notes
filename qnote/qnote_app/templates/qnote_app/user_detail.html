@@ -1,0 +1,17 @@
+{% extends 'qnote_app/qnote_app_base.html' %}
+{% block body_block %}
+    <h1>User detail page</h1>
+    <h2>User details:</h2>
+    <p>Author: {{ user_detail.name }}</p>
+    <p>Title: {{ user_detail.email }}</p>
+    <h3>Notes:</h3>
+    {% for note in user_detail.notes.all %}
+        <p>{{ note.author }} have this note:</p>
+        <ol>
+            <li>{{ note.title }}</li>
+            <li>{{ note.note }}</li>
+            <li>{{ note.date }}</li>
+        </ol>
+    {% endfor %}
+    
+{% endblock %}

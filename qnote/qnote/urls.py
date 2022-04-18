@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from qnote_app import views
+from qnote_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
-    path('', views.IndexView.as_view()),
+    path('', IndexView.as_view()),
+    path('qnote_app/', include('qnote_app.urls', namespace='qnote_app')),
 ]

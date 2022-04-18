@@ -1,0 +1,10 @@
+{% extends 'qnote_app/qnote_app_base.html' %}
+
+{% block body_block %}
+    <h1>User List</h1>
+    <ol>
+        {% for user in users %}
+            <li><a href="{{ user.id }}">{{ user.name }}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}
